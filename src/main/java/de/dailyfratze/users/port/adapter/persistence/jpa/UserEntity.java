@@ -28,8 +28,10 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * Storage of the details of a user.
@@ -41,6 +43,7 @@ import lombok.Getter;
 @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Getter
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @EqualsAndHashCode(of = "login")
 public class UserEntity implements Serializable {
 
